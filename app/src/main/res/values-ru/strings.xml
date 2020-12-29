@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TestApp MvRx &amp; Epoxy</string>
+    <string name="button">Кнопка</string>
+    <string name="current_time">"Текущее время: "</string>
+</resources>

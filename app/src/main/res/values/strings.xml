@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">TestApp MvRx &amp; Epoxy</string>
+
+    <string name="button">Button</string>
+    <string name="current_time">"Current time: "</string>
+    <string name="timeFormat" translatable="false">"hh:mm:ss"</string>
+</resources>
