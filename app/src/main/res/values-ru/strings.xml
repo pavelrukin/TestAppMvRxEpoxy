@@ -3,4 +3,13 @@
     <string name="app_name">TestApp MvRx &amp; Epoxy</string>
     <string name="button">Кнопка</string>
     <string name="current_time">"Текущее время: "</string>
+    <string name="hour_single">час</string>
+    <string name="hours_from_two_to_four">часа</string>
+    <string name="hours_many">часов</string>
+    <string name="minute_single">минута</string>
+    <string name="minutes_from_two_to_four">минуты</string>
+    <string name="minutes_many">минут</string>
+    <string name="second_single">секунда</string>
+    <string name="seconds_from_two_to_four">секунды</string>
+    <string name="seconds_many">секунд</string>
 </resources>

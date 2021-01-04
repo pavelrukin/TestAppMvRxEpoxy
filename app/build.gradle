@@ -2,7 +2,7 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'kotlin-kapt'
-  id 'kotlin-parcelize'
+    id 'kotlin-parcelize'
 
 
 }
@@ -36,7 +36,7 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
-    buildFeatures{
+    buildFeatures {
         dataBinding = true
         viewBinding = true
     }
@@ -59,7 +59,7 @@ dependencies {
     kapt "com.airbnb.android:epoxy-processor:4.3.1"
     //MvRx
     implementation 'com.airbnb.android:mvrx:2.0.0-beta3'
-    implementation  "androidx.multidex:multidex:2.0.1"
+    implementation "androidx.multidex:multidex:2.0.1"
     //Navigation
     def nav_version = "2.3.2"
     implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
@@ -67,10 +67,11 @@ dependencies {
     //Dagger
     implementation "com.squareup.inject:assisted-inject-annotations-dagger2:0.5.2"
     implementation "com.google.dagger:dagger:2.27"
-  kapt   "com.squareup.inject:assisted-inject-processor-dagger2:0.5.2"
+    kapt "com.squareup.inject:assisted-inject-processor-dagger2:0.5.2"
     kapt "com.google.dagger:dagger-compiler:2.27"
 
-    testImplementation 'junit:junit:4.+'
+
+    testImplementation 'junit:junit:4.13.1'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 }

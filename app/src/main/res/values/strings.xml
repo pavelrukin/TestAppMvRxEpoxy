@@ -4,4 +4,18 @@
     <string name="button">Button</string>
     <string name="current_time">"Current time: "</string>
     <string name="timeFormat" translatable="false">"hh:mm:ss"</string>
+    
+    <string name="hour_single">hour</string>
+    <string name="hours_from_two_to_four">hours</string>
+    <string name="hours_many">hours</string>
+
+    <string name="minute_single">minute</string>
+    <string name="minutes_from_two_to_four">minutes</string>
+    <string name="minutes_many">minutes</string>
+
+     <string name="second_single">second</string>
+    <string name="seconds_from_two_to_four">seconds</string>
+    <string name="seconds_many">seconds</string>
+
+
 </resources>

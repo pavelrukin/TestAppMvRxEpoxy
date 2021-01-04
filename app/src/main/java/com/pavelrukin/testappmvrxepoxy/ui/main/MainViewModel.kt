@@ -1,5 +1,6 @@
 package com.pavelrukin.testappmvrxepoxy.ui.main
 
+import android.content.Context
 import com.airbnb.mvrx.Async
 import com.airbnb.mvrx.MavericksState
 import com.airbnb.mvrx.MavericksViewModel
@@ -9,30 +10,27 @@ import com.pavelrukin.testappmvrxepoxy.di.DaggerMavericksViewModelFactory
 import com.pavelrukin.testappmvrxepoxy.repository.CurrentTimeRepository
 import com.squareup.inject.assisted.Assisted
 import com.squareup.inject.assisted.AssistedInject
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
-data class CurrentTimeState(val getCurrentTimeTextView: Async<String> = Uninitialized, val getCurrentTimeToast:Async<String> = Uninitialized) : MavericksState
+
+data class CurrentTimeState(
+    val getCurrentTimeTextView: Async<String?> = Uninitialized
+) : MavericksState
+
 class MainViewModel
 @AssistedInject constructor(
     @Assisted state: CurrentTimeState,
     private val repository: CurrentTimeRepository
-) : MavericksViewModel<CurrentTimeState>(state) {
+) : MavericksViewModel<CurrentTimeState>(initialState = state) {
 
-init {
-    getCurrentDateWithText()
-    getCurrentDate()
-}
-    fun getCurrentDate( ) {
-        repository.getCurrentTime("HH\nmm\nss").execute { copy(getCurrentTimeTextView = it ) }
+    fun getCurrentTimeToast() = repository.getCurrentTimeToast()
+
+    fun getCurrentTimeTextView(context: Context) = viewModelScope.launch {
+        delay(1100)
+        repository.getCurrentTime(context).execute() { copy(getCurrentTimeTextView = it) }
+
     }
-
-
-    fun getCurrentDateWithText( ) {
-        repository.getCurrentTime("HH:mm:ss").execute { copy(getCurrentTimeToast = it ) }
-    }
-
-
-
-
 
     @AssistedInject.Factory
     interface Factory : AssistedViewModelFactory<MainViewModel, CurrentTimeState> {
